@@ -1,3 +1,12 @@
+import random
+
+
+def get_name():
+    names = open('txt_files/name_dwarf.txt').read().splitlines()
+    name = random.choice(names)
+    return name
+
+
 class Hero:
     def __init__(self, name: str, power=10, agile=10, armor=10, iq=10, intuition=10, charisma=10):
         self.name = name
@@ -16,5 +25,5 @@ class Hero:
 
 
 if __name__ == '__main__':
-    a = Hero('Mojmir')
+    a = Hero(get_name())
     print(a.get_hero())

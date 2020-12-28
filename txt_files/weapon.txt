@@ -1,0 +1,22 @@
+Poor Halberd
+Short Heavy Halberd
+Battle Axe
+Red Axe
+Mouse Axe
+Elephant Axe
+Weak Mace
+Long Mace
+Short Heavy Mace
+Dark Mace
+King's Mace
+Solar Mace
+Double Flail
+Triple Flail
+Devil's Flail
+Dragon's Flail
+Short Bludgeon
+Golden Bludgeon
+Hell's Bludgeon
+Broken Bludgeon
+Bludgeon only-Handle
+
