@@ -1,14 +1,15 @@
 import unittest
-from heroes import Hero, get_name
+from heroes import Hero, get_hero_of_race
 from unittest import expectedFailure
 
 
 class AccountTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.race = 'elf'
-        sample = Hero(get_name(self.race))
-        sample2 = Hero(get_name(self.race))
+        self.create_kind = 'elf'
+        sample = Hero(get_hero_of_race(self.create_kind), self.create_kind)
+        sample2 = Hero(get_hero_of_race(self.create_kind), self.create_kind)
+        self.race = self.create_kind
         self.power = 10
         self.agile = 10
         self.durability = 10
