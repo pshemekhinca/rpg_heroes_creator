@@ -26,7 +26,5 @@ class AccountTestCase(unittest.TestCase):
 
     def test_random_list_of_item_for_each_hero(self):
         items_list1 = Hero(get_hero_items('close'))
-        print(items_list1)
         items_list2 = Hero(get_hero_items('close'))
-        print(items_list2)
         self.assertNotEqual(items_list1, items_list2)
