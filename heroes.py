@@ -37,12 +37,11 @@ class Hero:
         with open(f'txt_files/{kind2}_weapon.txt') as k2:
             side_weapons = k2.read().splitlines()
             secondary_weapon = list(random.sample(side_weapons, 1))
-
         return first_weapon + secondary_weapon
 
 
 if __name__ == '__main__':
     # create_kind = input("What race do you want to have for your hero: ")
-    create_kind = 'dwarf'
+    create_kind = 'human'
     sample_hero = Hero(get_hero_of_race(create_kind), create_kind)
     print(sample_hero.get_hero())
