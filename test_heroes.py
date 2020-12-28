@@ -1,5 +1,5 @@
 import unittest
-from heroes import Hero
+from heroes import Hero, get_name
 from unittest import expectedFailure
 
 
@@ -19,25 +19,7 @@ class AccountTestCase(unittest.TestCase):
         hero = sample.get_hero()
         self.assertIsInstance(hero, dict)
 
-#
-# @pytest.fixture
-# def hero():
-#     return Hero('Merlin')
-#
-#
-# def test_hero_starting_level(hero):
-#     """Initial level should be eql 1"""
-#     assert 1 == hero.level
-#
-#
-# def test_hero_level_up(hero):
-#     """Level should increase every + 1000 """
-#     hero.add_exp(2500)
-#     assert 3 == hero.level
-#
-#
-# def test_hero_exp_increase(hero):
-#     """Experience should accumulate"""
-#     hero.add_exp(2500)
-#     hero.add_exp(200)
-#     assert 2700 == hero.exp
+    def test_two_heroes_created_with_random_name(self):
+        hero1 = Hero(get_name())
+        hero2 = Hero(get_name())
+        self.assertNotEqual(hero1, hero2)
