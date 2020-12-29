@@ -26,7 +26,7 @@ Txt files can be supplemented with next / demanded names or items without limits
 
 
   
-[Back to the Top](#Simple-RPG-Heroes-Creator)
+[Back to the Top ^](#Simple-RPG-Heroes-Creator)
 
 ---
 
@@ -59,7 +59,7 @@ The project files should be ordered as below:
 
 
 
-[Back to the Top](#Simple-RPG-Heroes-Creator)
+[Back to the Top ^](#Simple-RPG-Heroes-Creator)
 
 ---
 
@@ -70,5 +70,5 @@ Created by Przemyslaw Hinca under license Creative Commons CC0 1.0.
 
 - Github - [pshemekhinca](https://github.com/pshemekhinca)
 
-[Back to the Top](#Simple-RPG-Heroes-Creator)
+[Back to the Top ^](#Simple-RPG-Heroes-Creator)
 
