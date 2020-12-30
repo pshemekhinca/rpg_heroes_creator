@@ -9,6 +9,7 @@ def get_hero_of_race(race):
 
 
 class Hero:
+    """Creates hero of given race with random name and random items set"""
     def __init__(self, race: str, name: str, power=10, agile=10, durability=10, intellect=10, intuition=10,
                  charisma=10):
         self.race = race
