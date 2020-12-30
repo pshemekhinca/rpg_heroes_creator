@@ -9,19 +9,19 @@ def get_hero_of_race(race):
 
 
 class Hero:
-    def __init__(self, name: str, race: str, power=10, agile=10, durability=10, iq=10, intuition=10, charisma=10):
+    def __init__(self, name: str, race: str, power=10, agile=10, durability=10, intellect=10, intuition=10, charisma=10):
         self.name = name
         self.race = race
         self.power = power
         self.agile = agile
         self.durability = durability
-        self.iq = iq
+        self.intellect = intellect
         self.intuition = intuition
         self.charisma = charisma
 
     def get_hero(self):
         hero = {'name': self.name, 'race': self.race, 'power': self.power, 'agile': self.agile,
-                'durability': self.durability, 'iq': self.iq, 'intuition': self.intuition, 'charisma': self.charisma,
+                'durability': self.durability, 'intellect': self.intellect, 'intuition': self.intuition, 'charisma': self.charisma,
                 'items': self.get_hero_items()}
         return hero
 
@@ -42,6 +42,6 @@ class Hero:
 
 if __name__ == '__main__':
     # create_kind = input("What race do you want to have for your hero: ")
-    create_kind = 'human'
+    create_kind = 'shifter'
     sample_hero = Hero(get_hero_of_race(create_kind), create_kind)
     print(sample_hero.get_hero())
