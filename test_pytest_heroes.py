@@ -25,9 +25,12 @@ def test_hero_instance_created_as_dictionary(hero):
     ('name', True),
     ('items', True),
     ])
-def test_heroes_created_with_different_random_name(data, expected):
+def test_heroes_created_with_random_atributes(data, expected):
     result = (hero[f'{data}'] != hero2[f'{data}'])
     assert result == expected
+
+def test_heroes_created_with_different_random_name(hero, hero2):
+    assert hero['name'] != hero2['name']
 
 
 def test_random_list_of_item_for_each_hero(hero, hero2):
