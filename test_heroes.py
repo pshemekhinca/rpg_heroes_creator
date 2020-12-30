@@ -7,8 +7,8 @@ class AccountTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.create_kind = 'shifter'
-        sample = Hero(get_hero_of_race(self.create_kind), self.create_kind)
-        sample2 = Hero(get_hero_of_race(self.create_kind), self.create_kind)
+        sample = Hero(self.create_kind, get_hero_of_race(self.create_kind))
+        sample2 = Hero(self.create_kind, get_hero_of_race(self.create_kind))
         self.hero = sample.get_hero()
         self.hero2 = sample2.get_hero()
 
