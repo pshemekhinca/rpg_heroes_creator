@@ -23,6 +23,7 @@ Txt files can be supplemented with next / demanded names or items without limits
 #### Technologies
 
 - Python
+- Pytest
 
 
   
@@ -50,6 +51,7 @@ The project files should be ordered as below:
     |
     |--- README.md
     |--- heroes.py
+    |--- test_pytest_heroes.py
     `--- test_heroes.py
 
 
