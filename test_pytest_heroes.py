@@ -6,14 +6,14 @@ from unittest import expectedFailure
 @pytest.fixture()
 def hero():
     create_kind = 'shifter'
-    sample = Hero(get_hero_of_race(create_kind), create_kind)
+    sample = Hero(create_kind, get_hero_of_race(create_kind))
     return sample.get_hero()
 
 
 @pytest.fixture()
 def hero2():
-    create_kind = 'shifter'
-    sample2 = Hero(get_hero_of_race(create_kind), create_kind)
+    create_kind2 = 'human'
+    sample2 = Hero(create_kind2, get_hero_of_race(create_kind2))
     return sample2.get_hero()
 
 
@@ -23,7 +23,7 @@ def test_hero_instance_created_as_dictionary(hero):
 
 @pytest.mark.parametrize('data, expected', [
     ('name', True),
-    ('race', False),
+    ('race', True),
     ('items', True),
     ])
 def test_heroes_created_with_random_atributes(data, expected, hero, hero2):
