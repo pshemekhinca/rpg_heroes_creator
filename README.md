@@ -2,7 +2,7 @@
 
 ---
 Attempt to simple RPG HERO CREATOR with option to create random characters group. 
-Random picks based on ordinary txt files.
+Random picks based on data from csv files.
 
 ---
 
@@ -18,7 +18,7 @@ Random picks based on ordinary txt files.
 ### Description
 
 The RPG Heroes Creator Created as part of the python course exercises.
-Txt files can be supplemented with next / demanded names or items without limits.
+CSV files can be supplemented with next / demanded names or items without limits.
 
 #### Technologies
 
@@ -42,16 +42,11 @@ The project files should be ordered as below:
     PROJECT
     |
     |--- txt_files
-    |    |---  close_weapon.txt
-    |    |---  distance_weapon.txt
-    |    |---  name_dwarf.txt
-    |    |---  name_elf.txt
-    |    |---  name_human.txt
-    |    `---  name_shifter.txt
+    |    |---  race_names.csv
+    |    `---  weapons.csv
     |
     |--- README.md
     |--- heroes.py
-    |--- test_pytest_heroes.py
     `--- test_heroes.py
 
 
