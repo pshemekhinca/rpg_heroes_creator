@@ -1,5 +1,6 @@
 import random
 import csv
+from pprint import pprint
 
 
 class Hero:
@@ -52,22 +53,21 @@ class CreateTeam(Hero):
         self.race = race
         self.team_list = []
 
-    def get_team(self):
-        for _ in range(self.heroes_no):
-            temp_hero = Hero(self.race)
-            self.team_list.append(temp_hero.get_hero())
+    def get_team_of_race(self):
+        self.team_list = [self.team_list.append(Hero(self.race).get_hero()) for _ in range(self.heroes_no)]
         return self.team_list
 
     def __repr__(self):
-        output = "\n".join(map(str, self.get_team()))
+        output = "\n".join(map(str, self.get_team_of_race()))
         return f"\n{self.team_name}:\n{output}"
 
 
 if __name__ == '__main__':
-    create_kind = 1
+    create_kind = 4
     race = {1: 'human', 2: 'elf', 3: 'dwarf', 4: 'shifter'}
     race_choice = race[create_kind]
 
     many_heroes = 3
+
     sample_team = CreateTeam('SampleTeam', race_choice, many_heroes)
     print(sample_team)
