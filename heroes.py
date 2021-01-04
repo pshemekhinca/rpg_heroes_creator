@@ -54,7 +54,7 @@ class CreateTeam(Hero):
         self.team_list = []
 
     def get_team_of_race(self):
-        self.team_list = [self.team_list.append(Hero(self.race).get_hero()) for _ in range(self.heroes_no)]
+        team_list = [self.team_list.append(Hero(self.race).get_hero()) for _ in range(self.heroes_no)]
         return self.team_list
 
     def __repr__(self):
