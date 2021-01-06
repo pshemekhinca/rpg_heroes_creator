@@ -11,8 +11,9 @@ while intro_quest != 'q':
         pick_race = int(input('Pick correct number 1-4: '))
 
     heroes_qty = int(input(f"\nHow many of {race[pick_race]}s do you want to have? -> "))
+    race_team_name = (input(f"\nWhat will be the the name of the {race[pick_race]}s horde? -> "))
 
-    sample_team = CreateTeam('SampleTeam', race[pick_race], heroes_qty)
+    sample_team = CreateTeam(race_team_name, race[pick_race], heroes_qty)
     print(sample_team)
 
     intro_quest = input('Would You like to add next hero/es?\n--> "Y" for yes or "q" to quit')
