@@ -59,8 +59,9 @@ class CreateTeam(Hero):
 
     def __repr__(self):
         output = "\n".join(map(str, self.get_team_of_race()))
+        # output = "\n".join(map(str, self.team_list))
         return f"\n{self.team_name}:\n{output}"
-
+        # for i, val in enumerate(self)
 
 if __name__ == '__main__':
     create_kind = 4
