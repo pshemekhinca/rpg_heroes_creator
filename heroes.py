@@ -1,7 +1,5 @@
 import random
-import csv
 import json
-from itertools import chain
 
 
 def file_to_write():
@@ -47,36 +45,29 @@ class Hero:
                     'intuition': self.intuition, 'charisma': self.charisma, 'items': self.items}
         return one_hero
 
-    # def get_hero_items(self):
-    #     if self.race == 'dwarf' or self.race == 'human':
-    #         kind1, kind2 = 0, 1
-    #     else:
-    #         kind1, kind2 = 1, 0
-    #     with open('db_files/weapons.csv', 'r') as weapon:
-    #         reader = csv.reader(weapon)
-    #         main_weapon = random.sample([row[kind1] for row in reader], 2)
-    #     with open('db_files/weapons.csv', 'r') as weapon:
-    #         reader = csv.reader(weapon)
-    #         side_weapon = random.sample([row[kind2] for row in reader], 1)
-    #     return main_weapon + side_weapon
-
     def get_hero_items(self):
+        reader = file_to_read_weapon()
         if self.race == 'dwarf' or self.race == 'human':
-            kind1, kind2 = 0, 1
+            weapon1, weapon2 = reader['close_weapon'], reader['range_weapon']
+            pts_1, pts_2 = reader['close_pts'], reader['range_pts']
         else:
-            kind1, kind2 = 1, 0
-        with open('db_files/weapons.csv', 'r') as weapon:
-            reader = csv.reader(weapon)
-            main_weapon = random.sample([row[kind1] for row in reader], 2)
-        with open('db_files/weapons.csv', 'r') as weapon:
-            reader = csv.reader(weapon)
-            side_weapon = random.sample([row[kind2] for row in reader], 1)
-        return main_weapon + side_weapon
+            weapon1, weapon2 = reader['range_weapon'], reader['close_weapon']
+            pts_1, pts_2 = reader['range_pts'], reader['close_pts']
+
+        weapon_set = {}
+        main_key = random.sample(weapon1.items(), 2)
+        weapon_set[main_key[0][1]] = pts_1[main_key[0][0]]
+        weapon_set[main_key[1][1]] = pts_1[main_key[1][0]]
+        side_key = random.sample(weapon2.items(), 1)
+        weapon_set[side_key[0][1]] = pts_2[side_key[0][0]]
+        return weapon_set
+
 
 class CreateTeam(Hero):
     """ Creates heroes team of given race under the chosen name"""
 
     def __init__(self, team_name: str, race: str, heroes_no: int):
+        super().__init__(race)
         self.team_name = team_name
         self.heroes_no = heroes_no
         self.race = race
@@ -92,13 +83,10 @@ class CreateTeam(Hero):
 
 
 if __name__ == '__main__':
-    create_kind = 3
+    create_kind = 1
     race = {1: 'human', 2: 'elf', 3: 'dwarf', 4: 'shifter'}
     race_choice = race[create_kind]
     many_heroes = 3
 
-    sample_h = Hero(race_choice)
-    print(sample_h.get_hero())
-    #
-    # sample_team = CreateTeam('SampleTeam', race_choice, many_heroes)
-    # print(sample_team)
+    sample_team = CreateTeam('SampleTeam', race_choice, many_heroes)
+    print(sample_team)
