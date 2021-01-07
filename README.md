@@ -18,7 +18,7 @@ Random picks based on data from csv files.
 ### Description
 
 The RPG Heroes Creator Created as part of the python course exercises.
-CSV files can be supplemented with next / demanded names or items without limits.
+JSON files can be supplemented with next / demanded names or items without limits.
 
 #### Technologies
 
