@@ -22,9 +22,8 @@ CSV files can be supplemented with next / demanded names or items without limits
 
 #### Technologies
 
-- JSON
-- CSV
 - Python
+- JSON
 - Pytest
 
 
@@ -45,9 +44,7 @@ The project files should be ordered as below:
     |
     |--- db_files
     |    |---  names_race.json
-    |    |---  weapons.json
-    |    |---  race_names.csv
-    |    `---  weapons.csv
+    |    `---  weapons.json
     |
     |--- README.md
     |--- heroes.py
