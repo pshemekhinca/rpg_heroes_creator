@@ -17,6 +17,6 @@ while intro_quest.lower() != 'n':
     sample_team = CreateTeam(race_team_name, race[pick_race], heroes_qty)
     print(sample_team)
 
-    intro_quest = input('Would you like to add next hero/es?\n--> [Y]eah, sure or [N]ope')
+    intro_quest = input('Would you like to add next hero/es to your team?\n--> [Y]eah, sure or [N]ope')
 
 print('It was nice to have you here for the while.\nBye, bye...')
