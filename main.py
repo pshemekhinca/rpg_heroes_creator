@@ -1,5 +1,5 @@
-from heroes import Hero, CreateTeam
-from colors import FColor, BColor
+from heroes import CreateTeam
+from colors import FColor
 import random
 
 
@@ -39,15 +39,16 @@ while intro_quest.lower() != 'n':
 
             heroes_qty = check_if_int(f"\nHow many {RACE_LIST[int(pick_race)]} warriors do you want to recruit? -> ")
             sample_team = CreateTeam(RACE_LIST[int(pick_race)], heroes_qty)
-            temp_team[RACE_LIST[int(pick_race)]] = sample_team
-            growing_team[team_name] = temp_team
-            print(f'Now your crew consist of:\n {growing_team}')
+            # temp_team[RACE_LIST[int(pick_race)]] = sample_team
+            # growing_team[team_name] = temp_team
+            print(f'Now your crew consist of:\n {sample_team}')
             # temp_team = {RACE_LIST[int(pick_race)]: sample_team}
             intro_quest = input("\nWould you like to add next hero/es to your team?\n"
                                 "--> [Y]eah, sure or [E]nough! let's find enemies: ")
+            # growing_team[team_name] = sample_team
 
-        print(f"\n\nWarriors recruitment complete!!!\n\nHere is your impressive army:\n"
-              f"\nV'V'V'V'V'V'V'V'V'V'V'V'V'V\n{growing_team}")
+        print(f"\n\nWarriors recruitment complete!!!\n\nHere is your impressive army:"
+              f"\n*~^~*~.~*~^~.~*~^~.~*~^~.~*~^~*\n{sample_team}")
         intro_quest = input(
             f"\n{FColor.BOLD}Do you want to [F]ight or you ru[N] away scared of the enemy{FColor.END}\n")
 
