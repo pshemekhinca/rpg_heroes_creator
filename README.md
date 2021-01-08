@@ -47,6 +47,7 @@ The project files should be ordered as below:
     |    `---  weapons.json
     |
     |--- README.md
+    |--- colors.py
     |--- heroes.py
     |--- main.py
     `--- test_heroes.py
