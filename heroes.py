@@ -66,9 +66,9 @@ class Hero:
 class CreateTeam(Hero):
     """ Creates heroes team of given race under the chosen name"""
 
-    def __init__(self, team_name: str, race: str, heroes_no: int):
+    def __init__(self, race: str, heroes_no: int):
         super().__init__(race)
-        self.team_name = team_name
+        self.team_name = ''
         self.heroes_no = heroes_no
         self.race = race
         self.team_list = []
@@ -79,7 +79,7 @@ class CreateTeam(Hero):
 
     def __repr__(self):
         output = "\n".join(map(str, self.get_team_of_race()))
-        return f"\n{self.team_name}:\n{output}"
+        return f"\n{output}"
 
 
 if __name__ == '__main__':
@@ -88,5 +88,5 @@ if __name__ == '__main__':
     race_choice = race[create_kind]
     many_heroes = 3
 
-    sample_team = CreateTeam('SampleTeam', race_choice, many_heroes)
+    sample_team = CreateTeam(race_choice, many_heroes)
     print(sample_team)
