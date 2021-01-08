@@ -18,7 +18,7 @@ def hero2():
 @pytest.fixture()
 def race_team(hero):
     team_members_nmb = 3
-    test_team = CreateTeam('Test Name', hero['race'], team_members_nmb)
+    test_team = CreateTeam(hero['race'], team_members_nmb)
     race_team = test_team.get_team_of_race()
     return race_team
 
