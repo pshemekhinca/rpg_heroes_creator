@@ -10,6 +10,7 @@ class FColor:
     UNDERL = '\033[4m'
     END = '\033[0m'
 
+
 class BColor:
     BLUE = '\033[104m'
     CYAN = '\033[106m'
