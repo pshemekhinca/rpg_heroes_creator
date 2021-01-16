@@ -4,8 +4,8 @@ import json
 
 def file_to_write():
     with open('db_files/names_race.json', 'w') as f:
-        reader = json.load(f)
-        return reader
+        writer = json.load(f)
+        return writer
 
 
 def file_to_read_name():
@@ -39,12 +39,6 @@ class Hero:
         name = random.choice(list(reader[self.race].values()))
         return name
 
-    def get_hero(self):
-        one_hero = {'name': self.name, 'race': self.race, 'power': self.power,
-                    'agile': self.agile, 'durability': self.durability, 'intellect': self.intellect,
-                    'intuition': self.intuition, 'charisma': self.charisma, 'items': self.items}
-        return one_hero
-
     def get_hero_items(self):
         reader = file_to_read_weapon()
         if self.race == 'dwarf' or self.race == 'human':
@@ -55,15 +49,21 @@ class Hero:
             pts_1, pts_2 = reader['range_pts'], reader['close_pts']
 
         weapon_set = {}
-        main_key = random.sample(weapon1.items(), 2)
-        weapon_set[main_key[0][1]] = pts_1[main_key[0][0]]
-        weapon_set[main_key[1][1]] = pts_1[main_key[1][0]]
-        side_key = random.sample(weapon2.items(), 1)
-        weapon_set[side_key[0][1]] = pts_2[side_key[0][0]]
+        main_weapon_key = random.sample(weapon1.items(), 2)
+        weapon_set[main_weapon_key[0][1]] = pts_1[main_weapon_key[0][0]]
+        weapon_set[main_weapon_key[1][1]] = pts_1[main_weapon_key[1][0]]
+        side_weapon_key = random.sample(weapon2.items(), 1)
+        weapon_set[side_weapon_key[0][1]] = pts_2[side_weapon_key[0][0]]
+
         return weapon_set
 
+    def get_hero(self):
+        return {'name': self.name, 'race': self.race, 'power': self.power, 'agile': self.agile,
+                'durability': self.durability, 'intellect': self.intellect, 'intuition': self.intuition,
+                'charisma': self.charisma, 'items': self.items}
 
-class CreateTeam(Hero):
+
+class CreateRaceTeam(Hero):
     """ Creates heroes team of given race under the chosen name"""
 
     def __init__(self, race: str, heroes_no: int):
@@ -77,9 +77,14 @@ class CreateTeam(Hero):
         team_list = [self.team_list.append(Hero(self.race).get_hero()) for _ in range(self.heroes_no)]
         return self.team_list
 
-    def __repr__(self):
-        output = "\n".join(map(str, self.get_team_of_race()))
-        return f"\n{output}"
+    # def __repr__(self):
+    #     out_team ={}
+    #     for k, v in self.get_team_of_race():
+    #         out_team[k]=v
+    #     # a = dict(self.get_team_of_race())
+    #     return out_team
+    # #     output = "\n".join(map(str, self.get_team_of_race()))
+    # #     return f"\n{output}"
 
 
 if __name__ == '__main__':
@@ -88,5 +93,5 @@ if __name__ == '__main__':
     race_choice = race[create_kind]
     many_heroes = 3
 
-    sample_team = CreateTeam(race_choice, many_heroes)
-    print(sample_team)
+    sample_team = CreateRaceTeam(race_choice, many_heroes)
+    print(sample_team.get_team_of_race())
